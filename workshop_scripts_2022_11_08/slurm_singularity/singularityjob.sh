@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## Job name:
-#SBATCH --job-name=BlastCONDA  #Name of the job
+#SBATCH --job-name=BlastSINGULARITY  #Name of the job
 ## Wall time limit:
 #SBATCH --time=00:10:00  #Run for 10 minutes
 ####Partition
@@ -25,36 +25,25 @@ echo "This is the JOB $SLURM_JOB_ID"
 
 module purge
 
-#Load conda module
-
-module load Miniconda3
-
-##Prpare the environment for conda activation in the computing node:
-
-eval "$(conda shell.bash hook)"
-
-##Load a conda environment that has blaston it
-conda activate $COURSES/Orion101-2022/SLURM/condaenv/BLAST
-echo "I am working with the conda env: "$CONDA_PREFIX
 
 ##Some variables
 
 QUERY="$COURSES/Orion101-2022/SLURM/SBATCH/amylase.Bgramini.fasta"
 DB="$COURSES/Orion101-2022/SLURM/SBATCH/Bacteroides.blastp.db"
 
-##Run blastp
-
+#Running blast
 echo "Starting blastp at"
 date +%d\ %b\ %T
 
-blastp \
+singularity exec /cvmfs/singularity.galaxyproject.org/b/l/blast\:2.13.0--hf3cf87c_0 blastp \
 -query $QUERY \
 -db $DB \
 -dbsize 1000000000 \
 -max_target_seqs 1 \
 -outfmt 6 \
 -num_threads $SLURM_CPUS_ON_NODE \
--out blastp.using.conda.tsv
+-out blastp.using.singularity.tsv
 
 echo "I've finished blast at"
 date +%d\ %b\ %T
+##Run blastp using singularity
