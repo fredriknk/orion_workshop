@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## Job name:
+## Job name:Fredriks_Testjob
 ## Job name:
 #SBATCH --job-name=MySecondSbatchScript  #Name of the job
 #
