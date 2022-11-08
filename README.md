@@ -12,7 +12,7 @@ module load XXX #Loads a module
 
 ``` 
 ### Installing conda software:
-see [conda.sh](workshop_scripts/biocon.sh)
+see [conda.sh](workshop_scripts_2022_11_07/biocon.sh)
 
 ### Using singularity containers:
 Singularity scripts for reusability
