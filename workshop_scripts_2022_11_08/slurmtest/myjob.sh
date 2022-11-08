@@ -2,7 +2,7 @@
 
 ## Job name:Fredriks_Testjob
 ## Job name:
-#SBATCH --job-name=MySecondSbatchScript  #Name of the job
+#SBATCH --job-name=FREDRIKSCRIPT  #Name of the job
 #
 ## Wall time limit:
 #SBATCH --time=00:10:00  #Run for 10 minutes
