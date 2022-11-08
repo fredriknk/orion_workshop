@@ -55,7 +55,39 @@ srun --partition=COURSE-CPU --cpus-per-task $NUM_CPUS --nodes $NUM_NODES --mem=4
 
 #### SLURM
 
+job header:
 
+```
+#!/bin/bash
+
+## Job name:
+#SBATCH --job-name=BlastCONDA  #Name of the job
+## Wall time limit:
+#SBATCH --time=00:10:00  #Run for 10 minutes
+####Partition
+#SBATCH --partition=COURSE-CPU  #Partiion submitting the job
+## Other parameters:
+#SBATCH --cpus-per-task 4    #Number of cpus the job will use
+#SBATCH --mem=1G             #Memory RAM
+#SBATCH --nodes 1
+#SBATCH --mail-user=arturo.vera.ponce.de.leon@nmbu.no  #User email
+#SBATCH -o slurm-%x_%j.out    #Standar output message
+#SBATCH -e slurm-%x_%j.err    #Standar error message
+
+######Everything below this are the job instructions######
+```
+
+```
+#starting job:
+sbatch myjob.sh
+
+#seeing how the job is doing:
+scontrol show job
+
+#More info:
+JOBNO=11518660
+sacct --format=jobid,jobname,partition,alloccpus,elapsed,state,MaxVMSize,ReqMem,node -j $JOBNO
+```
 
 ## Storage
 ####  $Home
