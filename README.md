@@ -40,6 +40,8 @@ $singularity exec --bind /mnt/databases/GTBTK/realease207_v2/:/refdata/ gtdbk_2.
 
 ### Sending files:
 
+You should use filemanager.orion.nmbu.no to transfer files.
+
 ## Storage
 ####  $Home
 Scripts and programs, no research data
