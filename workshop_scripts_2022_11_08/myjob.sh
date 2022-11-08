@@ -29,7 +29,7 @@ echo "Starting $SLURM_JOB_ID at"
 date
 
 sleep 10 && echo "I slept for 10 seconds" > 10.txt
-sleep 20 && ech "I slept for 20 seconds" > 20.txt
+sleep 20 && echo "I slept for 20 seconds" > 20.txt
 sleep 60 && echo "I slept for 1 min" > onemin.txt
 
 echo "Ending $SLURM_JOB_ID at"
