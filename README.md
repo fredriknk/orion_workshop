@@ -26,7 +26,7 @@ We cant use docker directly, but we can pull docker containers and build singula
 
 so to pull a library we simply change the command
 
-````commandline
+```commandline
 $docker pull ecogenomic/gtdbtk:2.1.1
 
 # is changed to
@@ -36,11 +36,26 @@ $singularity pull docker://ecogenomic/gtdbtk:2.1.1
 # To run it use:
 
 $singularity exec --bind /mnt/databases/GTBTK/realease207_v2/:/refdata/ gtdbk_2.1.1.sif gtdbtk -h
-````
+```
 
 ### Sending files:
 
 You should use filemanager.orion.nmbu.no to transfer files.
+
+```commandline
+scp frkl@filemanager.orion.nmbu.no:/mnt/users/frkl/orion_workshop/workshop_scripts/muscle_sing.sif ./Downloads
+```
+
+### Scheduling job
+
+#### Interactive
+```
+srun --partition=COURSE-CPU --cpus-per-task $NUM_CPUS --nodes $NUM_NODES --mem=4g --time=02:00:00 -pty bash i
+```
+
+#### SLURM
+
+
 
 ## Storage
 ####  $Home
