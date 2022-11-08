@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 ## Job name:
 #SBATCH --job-name=BlastCONDA  #Name of the job
