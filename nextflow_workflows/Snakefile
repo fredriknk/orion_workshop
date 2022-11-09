@@ -1,6 +1,6 @@
 rule bwa_map:
     input:
-        "data/genone.fa",
+        "data/genome.fa",
         "data/samples/A.fastq"
     output:
         "mapped_reads/A.bam"
